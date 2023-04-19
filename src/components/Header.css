@@ -1,0 +1,21 @@
+.logoContainer {
+  display: block;
+  margin: 0 auto;
+  margin-top: 25px;
+  text-align: center;
+  pointer-events: none;
+}
+.logoContainer img {
+  display: block;
+  margin: 0 auto;
+  width: 80vw;
+  pointer-events: auto;
+}
+
+.logoForm {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  width: 80vw;
+}

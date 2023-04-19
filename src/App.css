@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #f5f5f5;
+  --details: #80b192;
+  --detailsLetter: #f5f5f5;
+}
+
+/* Barra de navegacion */
+.navegacion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background);
+  padding: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Logo  */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.logo h1 {
+  margin-right: 0.5rem;
+}
+
+/* Buscador */
+.buscador {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.buscador input[type="text"] {
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+.buscador button[type="submit"] {
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  background-color: var(--details);
+  color: var(--detailsLetter);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Boton Inicio y Registro */
+.Authbuttons button {
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.Authbuttons .login {
+  background-color: var(--details);
+  color: var(--detailsLetter);
+}
+
+.Authbuttons .register {
+  background-color: var(--details);
+  color: var(--detailsLetter);
+}
+
+.Authbuttons .logout {
+  background-color: var(--details);
+  color: var(--detailsLetter);
+}
