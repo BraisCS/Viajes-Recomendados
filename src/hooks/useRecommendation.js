@@ -29,13 +29,13 @@ const useRecommendation = (id) => {
     });
   };
 
-  // const removeRecommendation = (id) => {
-  //   setRecommendation(
-  //     recommendation.filter((recommendation) => recommendation.id !== id)
-  //   );
-  // };
+  const removeRecommendation = (id) => {
+    setRecommendation(
+      recommendation.filter((recommendation) => recommendation.id !== id)
+    );
+  };
 
-  return { recommendation, loading, error, addComment };
+  return { recommendation, loading, error, addComment, removeRecommendation };
 };
 
 export default useRecommendation;
