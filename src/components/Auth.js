@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 export const Auth = () => {
   const { user, logOut } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   /* User  registrado */
   return user ? (
     <div className="Authbuttons">
@@ -13,11 +13,11 @@ export const Auth = () => {
       {user ? (
         <Link to={"/newrecommendation"}> Crear recomendacion </Link>
       ) : null}
-      <Link to={"/allrecommendations"}> Ver todas las recomendaciones </Link>
       <button
         className="logout"
         onClick={() => {
           logOut();
+          navigate("/");
         }}
       >
         {" "}

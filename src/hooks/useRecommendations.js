@@ -6,7 +6,7 @@ const useRecommendations = () => {
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-
+  console.log(recommendations);
   useEffect(() => {
     const loadRecommendations = async () => {
       try {

@@ -19,6 +19,16 @@ export const Header = () => {
           <input type="text" placeholder="Buscar por categoría o lugar" />
           <button type="submit">Buscar</button>
         </form>
+        <div>
+          {" "}
+          <div>
+            {" "}
+            <Link to={"/allrecommendations"}>
+              {" "}
+              Ver todas las recomendaciones{" "}
+            </Link>{" "}
+          </div>{" "}
+        </div>
         <Auth />
       </nav>
     </div>

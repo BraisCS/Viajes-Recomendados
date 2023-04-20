@@ -24,13 +24,11 @@ export const Recommendation = ({ recommendation, addComment }) => {
         token,
         comentario,
       });
-      const newVote = await sendVoteService({
+      /*       const newVote = await sendVoteService({
         id: recommendation.id,
         token,
         vote,
-      });
-
-      console.log(newVote);
+      }); */
 
       addComment(newComment);
 
@@ -48,31 +46,23 @@ export const Recommendation = ({ recommendation, addComment }) => {
         token,
         vote,
       });
-
       console.log(newVote);
     } catch (error) {
       setError(error.message);
     }
   };
 
-  // const deleteRecommendation = async (id) => {
-  //   try {
-  //     await deleteRecommendationService({ id, token });
-  //     if (removeRecommedation) {
-  //       removeRecommedation(id);
-  //     }
-  //     navigate(`/`);
-  //   } catch (error) {
-  //     setError(error.message);
-  //   }
-  // };
-  //Voto
-  const insertVote = async (id) => {
+  /*   const deleteRecommendation = async (id) => {
     try {
-      console.log(vote);
-      const data = await sendVoteService({ id, token, vote });
-    } catch (error) {}
-  };
+      await deleteRecommendationService({ id, token });
+      if (removeRecommedation) {
+        removeRecommedation(id);
+      }
+      navigate(`/`);
+    } catch (error) {
+      setError(error.message);
+    }
+  }; */
 
   return (
     <article>
@@ -96,13 +86,11 @@ export const Recommendation = ({ recommendation, addComment }) => {
       ) : (
         <p>Sin comentarios</p>
       )}
-      {/* Boton de eliminar una recomendacion  */}
-      {/* {user && user.id === recommendation.idUser ? (
+      {/*      {user && user.id === recommendation.idUser ? (
         <button onClick={() => deleteRecommendation(recommendation.id)}>
           Eliminar
         </button>
       ) : null} */}
-      {/* Boton para un comentario  */}
       {token ? (
         <section>
           <form onSubmit={handleCommentForm}>

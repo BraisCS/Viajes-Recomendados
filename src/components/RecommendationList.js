@@ -7,14 +7,13 @@ export const RecommendationList = ({ recommendations }) => {
         <ul key={recommendation.id}>
           <li>
             <Link to={`/recommendations/${recommendation.id}`}>
-              <p>{recommendation.title}</p>
+              <p> Titulo:{recommendation.title}</p>
             </Link>
             <Link to={`/user/${recommendation.idUser}`}>
-              <p>{recommendation.user}</p>
+              <p>Usuario:{recommendation.user}</p>
             </Link>
-            <p>{recommendation.category}</p>
-            <p>{recommendation.place}</p>
-            <p>{recommendation.user}</p>
+            <p>Categoria:{recommendation.category}</p>
+            <p>Lugar:{recommendation.place}</p>
             <img
               src={`${process.env.REACT_APP_BACKEND}/uploads/${recommendation.photo}`}
               alt={recommendation.title}
@@ -23,10 +22,7 @@ export const RecommendationList = ({ recommendations }) => {
               El numero de votos es de: {recommendation.num_votes} y la media es
               de: {recommendation.media}
             </p>
-            <p>{recommendation.text}</p>
-            <p>{recommendation.num_comments}</p>
-            <p>{recommendation.user}</p>
-            <p>{recommendation.comments}</p>
+            <p>Numero de comentarios: {recommendation.num_comments}</p>
           </li>
         </ul>
       ))}
