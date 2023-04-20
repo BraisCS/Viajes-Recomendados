@@ -15,10 +15,6 @@ export const Header = () => {
         </Link>
       </span>
       <nav className="navegacion">
-        <form className="buscador">
-          <input type="text" placeholder="Buscar por categoría o lugar" />
-          <button type="submit">Buscar</button>
-        </form>
         <div>
           {" "}
           <div>
