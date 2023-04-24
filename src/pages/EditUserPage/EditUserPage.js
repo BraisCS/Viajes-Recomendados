@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { putUserDataInfoService } from "../services";
-import { AuthContext } from "../context/AuthContext";
+import { putUserDataInfoService } from "../../services";
+import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export const EditUserPage = () => {
@@ -29,10 +29,14 @@ export const EditUserPage = () => {
   return (
     <section>
       <h1> Cambia el email o el usuario </h1>
-      <form onSubmit={handleForm}>
-        <fieldset>
-          <label htmlFor="email"> email </label>
+      <form className="RegisterLoginForm" onSubmit={handleForm}>
+        <fieldset className="RegisterLoginFieldset">
+          <label className="RegisterLoginLabel" htmlFor="email">
+            {" "}
+            email{" "}
+          </label>
           <input
+            className="RegisterLoginInput"
             type="email"
             id="email"
             name="email"
@@ -41,9 +45,13 @@ export const EditUserPage = () => {
           />
         </fieldset>
 
-        <fieldset>
-          <label htmlFor="name"> name </label>
+        <fieldset className="RegisterLoginFieldset">
+          <label className="RegisterLoginLabel" htmlFor="name">
+            {" "}
+            name{" "}
+          </label>
           <input
+            className="RegisterLoginInput"
             type="text"
             id="name"
             name="name"
@@ -52,9 +60,13 @@ export const EditUserPage = () => {
           />
         </fieldset>
 
-        <fieldset>
-          <label htmlFor="biography"> Biografía </label>
+        <fieldset className="RegisterLoginFieldset">
+          <label className="RegisterLoginLabel" htmlFor="biography">
+            {" "}
+            Biografía{" "}
+          </label>
           <input
+            className="RegisterLoginInput"
             type="text"
             id="biography"
             name="biography"
@@ -62,7 +74,7 @@ export const EditUserPage = () => {
             onChange={(e) => setBiography(e.target.value)}
           />
         </fieldset>
-        <button> Efectuar los cambios </button>
+        <button className="registerButton"> Efectuar los cambios </button>
         {error ? <p>{error}</p> : null}
       </form>
     </section>

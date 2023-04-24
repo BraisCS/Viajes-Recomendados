@@ -27,15 +27,3 @@
   align-content: center;
   width: 80vw;
 }
-
-button {
-  align-self: center;
-  border: none;
-  margin-top: 10px;
-  width: 75vw;
-  height: 30px;
-  border-radius: 10px;
-  background: var(--details);
-  color: var(--detailsLetter);
-  font-family: "Poppins";
-}

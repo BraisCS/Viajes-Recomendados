@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { userRegisterService } from "../services/index";
+import { userRegisterService } from "../../services/index";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./RegisterPage.css";
@@ -49,7 +49,7 @@ export const RegisterPage = () => {
   }
   return (
     <section>
-      <form onSubmit={handlForm}>
+      <form className="RegisterLoginForm" onSubmit={handlForm}>
         <span className="logoContainer">
           <Link to={"/"}>
             <img
@@ -92,9 +92,13 @@ export const RegisterPage = () => {
             )}
           </div>
         </div>
-        <fieldset>
-          <label htmlFor="name"> Nombre </label>
+        <fieldset className="RegisterLoginFieldset">
+          <label className="RegisterLoginLabel" htmlFor="name">
+            {" "}
+            Nombre{" "}
+          </label>
           <input
+            className="RegisterLoginInput"
             type="text"
             id="name"
             name="name"
@@ -102,9 +106,13 @@ export const RegisterPage = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </fieldset>
-        <fieldset>
-          <label htmlFor="email"> Email </label>
+        <fieldset className="RegisterLoginFieldset">
+          <label className="RegisterLoginLabel" htmlFor="email">
+            {" "}
+            Email{" "}
+          </label>
           <input
+            className="RegisterLoginInput"
             type="email"
             id="email"
             name="email"
@@ -112,9 +120,13 @@ export const RegisterPage = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </fieldset>
-        <fieldset>
-          <label htmlFor="pass1"> Contraseña </label>
+        <fieldset className="RegisterLoginFieldset">
+          <label className="RegisterLoginLabel" htmlFor="pass1">
+            {" "}
+            Contraseña{" "}
+          </label>
           <input
+            className="RegisterLoginInput"
             type="password"
             id="pass1"
             name="pass1"
@@ -122,9 +134,13 @@ export const RegisterPage = () => {
             onChange={(e) => setPass1(e.target.value)}
           />
         </fieldset>
-        <fieldset>
-          <label htmlFor="pass2"> Repite la contraseña </label>
+        <fieldset className="RegisterLoginFieldset">
+          <label className="RegisterLoginLabel" htmlFor="pass2">
+            {" "}
+            Repite la contraseña{" "}
+          </label>
           <input
+            className="RegisterLoginInput"
             type="password"
             id="pass2"
             name="pass2"
@@ -132,10 +148,13 @@ export const RegisterPage = () => {
             onChange={(e) => setPass2(e.target.value)}
           />
         </fieldset>
-        <fieldset>
-          <label htmlFor="biography"> Biografía </label>
+        <fieldset className="RegisterLoginFieldset">
+          <label className="RegisterLoginLabel" htmlFor="biography">
+            {" "}
+            Biografía{" "}
+          </label>
           <input
-            className="biography"
+            className="RegisterLoginInput"
             type="text"
             id="biography"
             name="biography"
