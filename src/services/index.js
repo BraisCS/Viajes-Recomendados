@@ -81,7 +81,7 @@ export const putUserDataInfoService = async (token, data) => {
   if (!res.ok) {
     throw new Error(json.message);
   }
-  return json;
+  return json.data;
 };
 
 export const sendRecommendationService = async ({ token, data }) => {
