@@ -74,7 +74,11 @@ export const Recommendation = ({ recommendation, addComment }) => {
       <p> {recommendation.num_comment}</p>
       <p> {recommendation.category}</p>
       <p> {recommendation.place}</p> <p> {recommendation.user}</p>{" "}
-      <p> {recommendation.text}</p>
+      <section
+        dangerouslySetInnerHTML={{
+          __html: recommendation.text,
+        }}
+      ></section>
       <p>
         El numero de votos es de: {recommendation.votes} y la media es de:
         {recommendation.votes}
