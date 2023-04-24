@@ -17,7 +17,6 @@ export const LoginPage = () => {
     setError("");
 
     try {
-      /* En data se guarda el tokken  */
       const data = await userLoginService({ email, password });
       logIn(data);
       navigate("/");
@@ -28,7 +27,7 @@ export const LoginPage = () => {
 
   return (
     <section>
-      <form onSubmit={handleForm}>
+      <form className="RegisterLoginForm" onSubmit={handleForm}>
         <span className="logoContainer">
           <Link to={"/"}>
             <img
@@ -38,9 +37,13 @@ export const LoginPage = () => {
             ></img>
           </Link>
         </span>
-        <fieldset>
-          <label htmlFor="email"> Email </label>
+        <fieldset className="RegisterLoginFieldset">
+          <label className="RegisterLoginLabel" htmlFor="email">
+            {" "}
+            Email{" "}
+          </label>
           <input
+            className="RegisterLoginInput"
             type="email"
             id="email"
             name="email"
@@ -49,9 +52,13 @@ export const LoginPage = () => {
           />
         </fieldset>
 
-        <fieldset>
-          <label htmlFor="password"> Password </label>
+        <fieldset className="RegisterLoginFieldset">
+          <label className="RegisterLoginLabel" htmlFor="password">
+            {" "}
+            Password{" "}
+          </label>
           <input
+            className="RegisterLoginInput"
             type="password"
             id="password"
             name="password"
@@ -60,7 +67,7 @@ export const LoginPage = () => {
           />
         </fieldset>
 
-        <button> Entrar </button>
+        <button className="registerButton"> Entrar </button>
         {error ? <p>{error}</p> : null}
       </form>
       <section className="anotherForm">
