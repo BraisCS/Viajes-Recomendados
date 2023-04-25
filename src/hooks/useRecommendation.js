@@ -12,6 +12,7 @@ const useRecommendation = (id) => {
       try {
         setLoading(true);
         const data = await getSingleRecommendationsService(id);
+        console.log(data);
         setRecommendation(data);
       } catch (error) {
         setError(error.message);

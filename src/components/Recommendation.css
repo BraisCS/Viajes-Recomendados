@@ -1,0 +1,8 @@
+  .star {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+  }
+  input[type="radio"]:checked + .star {
+    color: #ffcc00;
+  }

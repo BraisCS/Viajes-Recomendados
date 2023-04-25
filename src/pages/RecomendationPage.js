@@ -6,14 +6,19 @@ import { Recommendation } from "../components/Recommendation";
 export const RecommendationPage = () => {
   const { id } = useParams();
 
-  const { recommendation, loading, error, addComment } = useRecommendation(id);
+  const { recommendation, loading, error, addComment, removeRecommendation } =
+    useRecommendation(id);
 
   if (loading) return <p>Cargando recomendacion</p>;
   if (error) return <ErrorMessage message={error} />;
 
   return (
     <section>
-      <Recommendation recommendation={recommendation} addComment={addComment} />
+      <Recommendation
+        recommendation={recommendation}
+        addComment={addComment}
+        removeRecommedation={removeRecommendation}
+      />
     </section>
   );
 };
