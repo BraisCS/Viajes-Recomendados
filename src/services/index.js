@@ -160,7 +160,6 @@ export const sendVoteService = async ({ id, token, vote }) => {
   if (!res.ok) {
     throw new Error(json.message);
   }
-
   return json.data;
 };
 

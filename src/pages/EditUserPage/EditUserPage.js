@@ -21,7 +21,6 @@ const EditUserForm = ({ user, token, setUser }) => {
 
       setUser(updatedUser);
       // Si la función no lanza una excepción, significa que el registro fue exitoso
-      //alert("Cambios efectuados correctamente");
       navigate("/");
     } catch (error) {
       setError(error.message);

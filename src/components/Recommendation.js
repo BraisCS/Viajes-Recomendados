@@ -8,8 +8,13 @@ import {
 
 import { Link, useNavigate } from "react-router-dom";
 import { RecommendationComments } from "./RecommendationComments";
+import "./Recommendation.css";
 
-export const Recommendation = ({ recommendation, addComment }) => {
+export const Recommendation = ({
+  recommendation,
+  addComment,
+  removeRecommedation,
+}) => {
   const navigate = useNavigate();
   const { user, token } = useContext(AuthContext);
   const [error, setError] = useState("");
@@ -24,14 +29,7 @@ export const Recommendation = ({ recommendation, addComment }) => {
         token,
         comentario,
       });
-      /*       const newVote = await sendVoteService({
-        id: recommendation.id,
-        token,
-        vote,
-      }); */
-
       addComment(newComment);
-
       setComentario("");
     } catch (error) {
       setError(error.message);
@@ -41,28 +39,28 @@ export const Recommendation = ({ recommendation, addComment }) => {
   const handleVoteForm = async (e) => {
     e.preventDefault(); // Prevenir la acción por defecto del formulario
     try {
-      const newVote = await sendVoteService({
+      await sendVoteService({
         id: recommendation.id,
         token,
         vote,
       });
-      console.log(newVote);
     } catch (error) {
       setError(error.message);
     }
   };
 
-  /*   const deleteRecommendation = async (id) => {
+  const deleteRecommendation = async (id) => {
     try {
       await deleteRecommendationService({ id, token });
       if (removeRecommedation) {
         removeRecommedation(id);
+
+        navigate(`/`);
       }
-      navigate(`/`);
     } catch (error) {
       setError(error.message);
     }
-  }; */
+  };
 
   return (
     <article>
@@ -71,7 +69,7 @@ export const Recommendation = ({ recommendation, addComment }) => {
         src={`${process.env.REACT_APP_BACKEND}/uploads/${recommendation.photo}`}
         alt={recommendation.title}
       />
-      <p> {recommendation.num_comment}</p>
+      <p> {recommendation.num_votes}</p>
       <p> {recommendation.category}</p>
       <p> {recommendation.place}</p> <p> {recommendation.user}</p>{" "}
       <section
@@ -81,7 +79,7 @@ export const Recommendation = ({ recommendation, addComment }) => {
       ></section>
       <p>
         El numero de votos es de: {recommendation.votes} y la media es de:
-        {recommendation.votes}
+        {recommendation.media}
       </p>
       <p> {recommendation.createdAt}</p>
       <h2>Comentarios</h2>
@@ -90,11 +88,11 @@ export const Recommendation = ({ recommendation, addComment }) => {
       ) : (
         <p>Sin comentarios</p>
       )}
-      {/*      {user && user.id === recommendation.idUser ? (
+      {user && user.id === recommendation.idUser ? (
         <button onClick={() => deleteRecommendation(recommendation.id)}>
           Eliminar
         </button>
-      ) : null} */}
+      ) : null}
       {token ? (
         <section>
           <form onSubmit={handleCommentForm}>
@@ -112,14 +110,52 @@ export const Recommendation = ({ recommendation, addComment }) => {
           </form>
           <form onSubmit={handleVoteForm}>
             <fieldset>
-              <label htmlFor="vote"> Vota la recomendacion </label>
-              <input
-                type="number"
-                id="vote"
-                name="vote"
-                value={vote}
-                onChange={(e) => setVote(e.target.value)}
-              />
+              <legend>Vota la recomendación</legend>
+              <label>
+                <input
+                  type="radio"
+                  name="vote"
+                  value="1"
+                  onChange={(e) => setVote(parseInt(e.target.value))}
+                />
+                <span class="star">&#9733;</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="vote"
+                  value="2"
+                  onChange={(e) => setVote(parseInt(e.target.value))}
+                />
+                <span class="star">&#9733;</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="vote"
+                  value="3"
+                  onChange={(e) => setVote(parseInt(e.target.value))}
+                />
+                <span class="star">&#9733;</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="vote"
+                  value="4"
+                  onChange={(e) => setVote(parseInt(e.target.value))}
+                />
+                <span class="star">&#9733;</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="vote"
+                  value="5"
+                  onChange={(e) => setVote(parseInt(e.target.value))}
+                />
+                <span class="star">&#9733;</span>
+              </label>
             </fieldset>
             <button type="submit"> Votar </button>
           </form>
