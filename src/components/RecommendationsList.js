@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import IconButton from "@mui/material/IconButton";
+import SearchIcon from "@mui/icons-material/Search";
+import DeleteIcon from "@mui/icons-material/Delete";
 import "./RecommendationsList.css";
 
 export const RecommendationsList = ({ recommendations }) => {
@@ -76,31 +79,51 @@ export const RecommendationsList = ({ recommendations }) => {
 
   return (
     <div>
+      <p className="listText">
+        Explora todas las publicaciones y encuentra inspiración para tu próximo
+        viaje. Déjate llevar y descubre las maravillas que ofrece el mundo.
+      </p>
       <div className="sort">
-        <div className="search">
+        <div className="searchRemove">
           <input
+            className="srinput"
             type="text"
             placeholder="Buscar por lugar"
             value={placeQuery}
             onChange={(e) => setPlaceQuery(e.target.value)}
           />
-          <button onClick={handleSearch}>Buscar</button>
-        </div>
-        <div className="searchRemove">
           <input
+            className="srinput"
             type="text"
             placeholder="Buscar por categoría"
             value={categoryQuery}
             onChange={(e) => setCategoryQuery(e.target.value)}
           />
-          <button onClick={handleClearSearch}>Limpiar</button>
         </div>
         <div className="sortMedia">
-          <button onClick={() => handleSortBy("maxmedia")}>
-            Ordenar por mas media
+          <IconButton
+            onClick={handleSearch}
+            aria-label="Buscar"
+            sx={{
+              color: "#80b192",
+            }}
+          >
+            <SearchIcon />
+          </IconButton>
+          <IconButton
+            onClick={handleClearSearch}
+            aria-label="Limpiar"
+            sx={{
+              color: "#80b192",
+            }}
+          >
+            <DeleteIcon />
+          </IconButton>
+          <button className="srbutton" onClick={() => handleSortBy("maxmedia")}>
+            <img className="imgMedia" src="1.png" alt="Logo"></img>
           </button>
-          <button onClick={() => handleSortBy("minmedia")}>
-            Ordenar por menos media
+          <button className="srbutton" onClick={() => handleSortBy("minmedia")}>
+            <img className="imgMedia" src="2.png" alt="Logo"></img>
           </button>
         </div>
       </div>
@@ -143,7 +166,10 @@ export const RecommendationsList = ({ recommendations }) => {
           ))}
         </article>
       ) : (
-        <p>No se encontraron recomendaciones...</p>
+        <p className="listText">
+          Aún no hay publicaciones. ¡Regístrate y se el primero en compartir tus
+          experiencias!
+        </p>
       )}
       {totalPages > 1 && (
         <div className="pages">
