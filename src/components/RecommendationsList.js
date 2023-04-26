@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./RecommendationList.css";
 
 export const RecommendationsList = ({ recommendations }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -49,29 +50,37 @@ export const RecommendationsList = ({ recommendations }) => {
       {filteredRecommendations.length ? (
         <article>
           {filteredRecommendations.map((recommendation) => (
-            <ul key={recommendation.id}>
+            <ul className="ul" key={recommendation.id}>
               <li>
-                <Link to={`/recommendations/${recommendation.id}`}>
-                  <p>{recommendation.title}</p>
-                </Link>
-                <Link to={`/user/${recommendation.idUser}`}>
-                  <p>{recommendation.user}</p>
-                </Link>
-                <p>{recommendation.category}</p>
-                <p>{recommendation.place}</p>
-                <p>{recommendation.user}</p>
-                <img
-                  src={`${process.env.REACT_APP_BACKEND}/uploads/${recommendation.photo}`}
-                  alt={recommendation.title}
-                />
-                <p>
-                  El numero de votos es de: {recommendation.num_votes} y la
-                  media es de: {recommendation.media}
-                </p>
-                <p>{recommendation.text}</p>
-                <p>{recommendation.num_comments}</p>
-                <p>{recommendation.user}</p>
-                <p>{recommendation.comments}</p>
+                <div className="slide-container">
+                  <div className="userVote">
+                    <Link to={`/user/${recommendation.idUser}`}>
+                      <p className="slide-name">{recommendation.user}</p>
+                    </Link>
+                    <p className="slide-votes">
+                      Nº votos: {recommendation.votes} votos:{" "}
+                      {recommendation.votes}
+                    </p>
+                  </div>
+
+                  <p className="slide-place">{recommendation.place}</p>
+
+                  <Link to={`/recommendations/${recommendation.id}`}>
+                    <img
+                      src={`${process.env.REACT_APP_BACKEND}/uploads/${recommendation.photo}`}
+                      alt={recommendation.title}
+                      className="slide-image"
+                    />
+                  </Link>
+
+                  <Link to={`/recommendations/${recommendation.id}`}>
+                    <p className="slide-title">{recommendation.title}</p>
+                  </Link>
+
+                  <p className="slide-category">{recommendation.category}</p>
+
+                  <p className="slide-summary">{recommendation.summary}</p>
+                </div>
               </li>
             </ul>
           ))}
