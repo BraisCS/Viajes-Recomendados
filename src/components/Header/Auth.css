@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 :root {
-  --background: #f5f5f5;
+  --background: white;
   --details: #80b192;
   --detailsLetter: #f5f5f5;
   --boxandText: gray;
-  --highlightletter: #5d5f71;
-  font-family: Poppins;
+  --letterNav: black;
 }
 
 .navuser {
@@ -17,5 +16,9 @@
 .navuser a {
   font-family: "Poppins";
   font-size: 16px;
+  color: var(--letterNav);
+}
+
+.navuser a:hover {
   color: var(--details);
 }

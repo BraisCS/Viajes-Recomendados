@@ -1,6 +1,6 @@
 import { Auth } from "./Auth";
 import { Link } from "react-router-dom";
-import "./Header.css";
+import "../Header/Header.css";
 
 export const Header = () => {
   return (
@@ -15,12 +15,8 @@ export const Header = () => {
         </Link>
       </span>
       <nav className="navegacion">
-        <div>
-          {" "}
-          <div>
-            {" "}
-            <Link to={"/allrecommendations"}> Recomendaciones </Link>{" "}
-          </div>{" "}
+        <div className="Rmenu">
+          <Link to={"/allrecommendations"}> Recomendaciones </Link>
         </div>
         <Auth />
       </nav>

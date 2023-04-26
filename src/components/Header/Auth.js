@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 import { IconButton, Menu, MenuItem } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
 import LogoutIcon from "@mui/icons-material/Logout";
-import "../components/Auth.css";
+import "../Header/Auth.css";
 
 export const Auth = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -26,13 +26,28 @@ export const Auth = () => {
     <div className="Authbuttons">
       {/* New Recommendation */}
       <Link to={"/newrecommendation"}>
-        <IconButton>
+        <IconButton
+          sx={{
+            color: "black",
+            "&:hover": {
+              color: "#80b192",
+            },
+          }}
+        >
           <AddIcon />
         </IconButton>
       </Link>
 
       {/* User Menu */}
-      <IconButton onClick={handleMenuOpen}>
+      <IconButton
+        onClick={handleMenuOpen}
+        sx={{
+          color: "black",
+          "&:hover": {
+            color: "#80b192",
+          },
+        }}
+      >
         <PersonIcon />
       </IconButton>
       <Menu

@@ -1,3 +1,30 @@
-footer {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+:root {
+  --background: white;
+  --details: #80b192;
+  --detailsLetter: #f5f5f5;
+  --boxandText: gray;
+  --letterNav: black;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin-top: 70px;
+  background-color: var(--background);
+}
+
+.footer-content p {
+  color: black;
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.footer-scroll-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
 }
