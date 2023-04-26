@@ -19,10 +19,7 @@ export const Header = () => {
           {" "}
           <div>
             {" "}
-            <Link to={"/allrecommendations"}>
-              {" "}
-              Ver todas las recomendaciones{" "}
-            </Link>{" "}
+            <Link to={"/allrecommendations"}> Recomendaciones </Link>{" "}
           </div>{" "}
         </div>
         <Auth />
