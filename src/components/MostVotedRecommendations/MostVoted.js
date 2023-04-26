@@ -65,6 +65,10 @@ export const MostVoted = ({ recommendation }) => {
 
         <p className="slide-summary">{recommendation.summary}</p>
       </div>
+      <p className="listText">
+        Aún no hay publicaciones. ¡Regístrate y se el primero en compartir tus
+        experiencias!
+      </p>
     </div>
   );
 };
