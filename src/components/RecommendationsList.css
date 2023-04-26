@@ -7,35 +7,33 @@
   --boxandText: gray;
 }
 
+.listText {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Poppins";
+  color: gray;
+}
+
 .sort {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   width: 100vw;
-  margin: 20px 0;
+  margin: 20px auto;
   /* box-shadow: 0px 0px 5px 0px rgb(199, 199, 199); */
 }
 
-.search,
 .searchRemove {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   margin-bottom: 15px;
 }
 
-.search input {
+.srinput {
   display: block;
-  width: 70vw;
-  margin: 20px 20px 0 10px;
-  border-bottom: 1px solid gray;
-  font-size: 16px;
-  font-family: "Poppins";
-}
-
-.searchRemove input {
-  display: block;
-  width: 70vw;
+  width: 80vw;
   margin: 20px 20px 0 10px;
   border-bottom: 1px solid gray;
   font-size: 16px;
@@ -44,6 +42,23 @@
 
 input:focus-within {
   border-bottom: 1.3px solid var(--details);
+}
+
+.sortMedia {
+  display: flex;
+  justify-content: center;
+}
+
+.srbutton {
+  margin: 15px 15px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.imgMedia {
+  width: 35px;
+  height: 35px;
 }
 
 .ul li {
