@@ -80,8 +80,11 @@ export const RecommendationsList = ({ recommendations }) => {
   return (
     <div>
       <p className="listText">
-        Explora todas las publicaciones y encuentra inspiración para tu próximo
-        viaje. Déjate llevar y descubre las maravillas que ofrece el mundo.
+        <h1>
+          Explora todas las publicaciones y encuentra inspiración para tu
+          próximo viaje.
+        </h1>{" "}
+        <h2>Déjate llevar y descubre las maravillas que ofrece el mundo.</h2>
       </p>
       <div className="sort">
         <div className="searchRemove">
@@ -119,10 +122,10 @@ export const RecommendationsList = ({ recommendations }) => {
           >
             <DeleteIcon />
           </IconButton>
-          <button className="srbutton" onClick={() => handleSortBy("maxmedia")}>
+          <button className="srbutton" onClick={() => handleSortBy("minmedia")}>
             <img className="imgMedia" src="1.png" alt="Logo"></img>
           </button>
-          <button className="srbutton" onClick={() => handleSortBy("minmedia")}>
+          <button className="srbutton" onClick={() => handleSortBy("maxmedia")}>
             <img className="imgMedia" src="2.png" alt="Logo"></img>
           </button>
         </div>

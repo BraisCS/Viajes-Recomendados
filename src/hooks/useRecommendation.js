@@ -36,7 +36,22 @@ const useRecommendation = (id) => {
     );
   };
 
-  return { recommendation, loading, error, addComment, removeRecommendation };
+  const voteRecommendation = (id, votes, median) => {
+    setRecommendation({
+      ...recommendation,
+      num_votes: votes,
+      media: median,
+    });
+  };
+
+  return {
+    recommendation,
+    loading,
+    error,
+    addComment,
+    removeRecommendation,
+    voteRecommendation,
+  };
 };
 
 export default useRecommendation;
