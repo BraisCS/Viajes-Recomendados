@@ -98,6 +98,7 @@ export const Recommendation = ({
         </div>
       </div>
       <img
+        className="photoR"
         src={`${process.env.REACT_APP_BACKEND}/uploads/${recommendation.photo}`}
         alt={recommendation.title}
       />
@@ -138,56 +139,73 @@ export const Recommendation = ({
                 <button type="submit">Publicar</button>
               </form>
             )}
-            <form onSubmit={handleVoteForm}>
-              <fieldset>
-                <legend>Vota la recomendación</legend>
-                <label>
-                  <input
-                    type="radio"
-                    name="vote"
-                    value="1"
-                    onChange={(e) => setVote(parseInt(e.target.value))}
-                  />
-                  <span class="star">&#9733;</span>
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    name="vote"
-                    value="2"
-                    onChange={(e) => setVote(parseInt(e.target.value))}
-                  />
-                  <span class="star">&#9733;</span>
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    name="vote"
-                    value="3"
-                    onChange={(e) => setVote(parseInt(e.target.value))}
-                  />
-                  <span class="star">&#9733;</span>
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    name="vote"
-                    value="4"
-                    onChange={(e) => setVote(parseInt(e.target.value))}
-                  />
-                  <span class="star">&#9733;</span>
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    name="vote"
-                    value="5"
-                    onChange={(e) => setVote(parseInt(e.target.value))}
-                  />
-                  <span class="star">&#9733;</span>
-                </label>
-              </fieldset>
-              <button type="submit"> Votar </button>
+            <form className="formvote">
+              <p className="clasificacion"> Vota la recomendacion</p>
+              <label for="radio5">
+                <input
+                  id="radio5"
+                  type="radio"
+                  name="estrellas"
+                  value="5"
+                  onClick={(e) => {
+                    setVote(parseInt(e.target.value));
+                    handleVoteForm(e);
+                  }}
+                />{" "}
+                ★
+              </label>
+              <label for="radio4">
+                <input
+                  id="radio4"
+                  type="radio"
+                  name="estrellas"
+                  value="4"
+                  onClick={(e) => {
+                    setVote(parseInt(e.target.value));
+                    handleVoteForm(e);
+                  }}
+                />{" "}
+                ★
+              </label>
+              <label for="radio3">
+                <input
+                  id="radio3"
+                  type="radio"
+                  name="estrellas"
+                  value="3"
+                  onClick={(e) => {
+                    setVote(parseInt(e.target.value));
+                    handleVoteForm(e);
+                  }}
+                />{" "}
+                ★
+              </label>
+              <label for="radio2">
+                <input
+                  id="radio2"
+                  type="radio"
+                  name="estrellas"
+                  value="2"
+                  onClick={(e) => {
+                    setVote(parseInt(e.target.value));
+                    handleVoteForm(e);
+                  }}
+                />{" "}
+                ★
+              </label>
+              <label for="radio1">
+                <input
+                  id="radio1"
+                  type="radio"
+                  name="estrellas"
+                  value="1"
+                  onClick={(e) => {
+                    setVote(parseInt(e.target.value));
+                    handleVoteForm(e);
+                  }}
+                />{" "}
+                ★
+              </label>
             </form>
           </div>
           <h2 className="comments">Comentarios</h2>

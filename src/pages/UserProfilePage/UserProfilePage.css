@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+:root {
+  --background: white;
+  --details: #80b192;
+  --detailsLetter: #f5f5f5;
+  --boxandText: gray;
+  --letterNav: black;
+}
+
+.userPage {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.imgProfile {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+}
+
+.userDates {
+  display: flex;
+  flex-direction: column;
+  margin: 15px auto 15px 20px;
+}
+
+.nameProfile {
+  font-size: 24px;
+  font-family: "Poppins";
+  color: var(--letterNav);
+  margin-left: 0;
+}
+
+.bioProfile {
+  margin-left: 0;
+}

@@ -4,34 +4,32 @@ export const UserProfileRecommendations = ({ recommendations }) => {
   return recommendations.length ? (
     <article>
       {recommendations.map((recommendation) => (
-        <ul key={recommendation.id}>
-          <li>
-            <Link to={`/recommendations/${recommendation.id}`}>
-              <p>{recommendation.title}</p>
-            </Link>
-            <Link to={`/user/${recommendation.idUser}`}>
-              <p>{recommendation.user}</p>
-            </Link>
-            <p>{recommendation.category}</p>
-            <p>{recommendation.place}</p>
-            <p>{recommendation.user}</p>
+        <div className="slide-container">
+          <p className="slide-votes">
+            {recommendation.media} ({recommendation.num_votes})
+          </p>
+
+          <p className="slide-place">{recommendation.place}</p>
+
+          <Link to={`/recommendations/${recommendation.id}`}>
             <img
               src={`${process.env.REACT_APP_BACKEND}/uploads/${recommendation.photo}`}
               alt={recommendation.title}
+              className="slide-image"
             />
-            <p>
-              El numero de votos es de: {recommendation.num_votes} y la media es
-              de: {recommendation.media}
-            </p>
-            <p>{recommendation.text}</p>
-            <p>{recommendation.num_comments}</p>
-            <p>{recommendation.user}</p>
-            <p>{recommendation.comments}</p>
-          </li>
-        </ul>
+          </Link>
+
+          <Link to={`/recommendations/${recommendation.id}`}>
+            <p className="slide-title">{recommendation.title}</p>
+          </Link>
+
+          <p className="slide-category">{recommendation.category}</p>
+
+          <p className="slide-summary">{recommendation.summary}</p>
+        </div>
       ))}
     </article>
   ) : (
-    <p>There are no recommendations yet...</p>
+    <p>Aún no ha publicado recomendaciones.</p>
   );
 };

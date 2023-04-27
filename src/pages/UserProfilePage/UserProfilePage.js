@@ -3,6 +3,7 @@ import { UserProfile } from "../../components/UserProfile";
 import { ErrorMessage } from "../../components/ErrorMessage";
 import useRecommendations from "../../hooks/useRecommendations";
 import { UserProfileRecommendations } from "../../components/UserProfileRecommendations";
+import "../UserProfilePage/UserProfilePage.css";
 
 export const UserProfilePage = () => {
   const { idUser } = useParams();
@@ -21,14 +22,19 @@ export const UserProfilePage = () => {
 
     return (
       <section>
-        <h1> Datos de {user.name} </h1>
-        <p>Nombre: {user.name}</p>
-        <p>Biografia: {user.biography}</p>
-        <img
-          src={`${process.env.REACT_APP_BACKEND}/uploads/${user.photo}`}
-          alt={user.name}
-        />
-        <h1>Las recomendaciones subida por {user.name} son las siguientes :</h1>
+        <div className="userPage">
+          <img
+            className="imgProfile"
+            src={`${process.env.REACT_APP_BACKEND}/uploads/${user.photo}`}
+            alt={user.name}
+          />
+          <div className="userDates">
+            <h1 className="nameProfile">{user.name} </h1>
+            <p className="bioProfile">{user.biography}</p>
+          </div>
+        </div>
+
+        <h1>Todas las publicaciones de {user.name}:</h1>
         <section>
           <h1>
             <UserProfileRecommendations recommendations={userRecommendations} />

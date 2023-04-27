@@ -14,6 +14,10 @@
   margin: 0 10px;
 }
 
+.photoR {
+  width: 100vw;
+}
+
 .rTitle {
   font-size: 24px;
   font-family: "Inter";
@@ -79,30 +83,29 @@
   color: var(--letterNav);
 }
 
-/* fieldset label {
-  display: inline-block;
-  margin-right: 7px;
-  width: 10px;
-  height: 10px;
-  cursor: pointer;
+.formvote {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
 }
-
-fieldset label input[type="radio"] {
+.formvote p {
+  text-align: center;
+}
+.formvote label {
+  font-size: 20px;
+}
+.formvote input[type="radio"] {
   display: none;
 }
-
-fieldset label span.star {
-  cursor: pointer;
+.formvote label {
+  color: grey;
 }
-
-fieldset label:hover span.star,
-fieldset label:hover ~ label span.star,
-fieldset label input[type="radio"]:checked ~ span.star {
-  color: gold;
+.formvote label:hover,
+.formvote label:hover ~ label {
+  color: orange;
 }
-
-fieldset label.star:hover,
-fieldset label.star:focus,
-fieldset label.star.active {
-  background-color: gold;
-} */
+.formvote input[type="radio"]:checked ~ label {
+  color: orange;
+}
