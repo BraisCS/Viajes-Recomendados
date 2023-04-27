@@ -19,6 +19,7 @@
 }
 
 .rTitle {
+  margin-top: 60px;
   font-size: 24px;
   font-family: "Inter";
   text-transform: uppercase;
@@ -55,14 +56,6 @@
   padding: 0 8px;
 }
 
-.rline {
-  width: 90vw;
-  height: 9px;
-  margin: 10px auto;
-  background-color: #333;
-  box-shadow: 0px 0px 3px 1px rgb(150, 145, 145);
-}
-
 .formContainer {
   display: flex;
   flex-direction: row;
@@ -85,13 +78,6 @@
   border: none;
   background: none;
 }
-
-/* .comment-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  order: 2;
-} */
 
 .inputComment {
   display: flex;
@@ -131,9 +117,48 @@
 }
 
 .comments {
-  margin: 10px auto 10px 15px;
+  margin: 50px auto 10px 15px;
   font-size: 20px;
   font-family: "Inter";
   text-transform: uppercase;
   color: var(--letterNav);
+}
+
+.removeRec {
+  margin-right: 30vw;
+  width: 40vw;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  font-family: "Poppins";
+  background: var(--details);
+  color: var(--detailsLetter);
+}
+
+@media (min-width: 768px) {
+  .recommendationpage {
+    width: 60vw;
+    margin: 0 auto;
+  }
+
+  .rTitle {
+    margin-top: 60px;
+    font-size: 40px;
+    font-family: "Inter";
+    text-transform: uppercase;
+    color: var(--letterNav);
+  }
+
+  img.photoR {
+    width: 60vw;
+    margin: 0 auto 0 auto;
+  }
+
+  .formContainer {
+    width: 60vw;
+  }
+
+  .inputComment {
+    width: 60vw;
+  }
 }

@@ -56,12 +56,12 @@ export const HomePage = () => {
         ))}
       </Slider>
 
-      {/* {recommendation.length > 0 ? null : (
+      {topThreeRecommendations.length > 0 ? null : (
         <p className="listText">
-          Aún no hay publicaciones. ¡Regístrate y sé el primero en compartir tus
+          Aún no hay publicaciones. ¡Anímate y se el primero en compartir tus
           experiencias!
         </p>
-      )} */}
+      )}
     </>
   );
 };
