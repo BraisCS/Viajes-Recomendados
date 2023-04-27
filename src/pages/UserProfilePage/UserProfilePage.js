@@ -29,12 +29,12 @@ export const UserProfilePage = () => {
             alt={user.name}
           />
           <div className="userDates">
-            <h1 className="nameProfile">{user.name} </h1>
+            <p className="nameProfile">{user.name} </p>
             <p className="bioProfile">{user.biography}</p>
           </div>
         </div>
 
-        <h1>Todas las publicaciones de {user.name}:</h1>
+        <h1 className="h1profile">Publicaciones de {user.name}</h1>
         <section>
           <h1>
             <UserProfileRecommendations recommendations={userRecommendations} />

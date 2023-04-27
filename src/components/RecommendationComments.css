@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+:root {
+  --background: white;
+  --details: #80b192;
+  --detailsLetter: #f5f5f5;
+  --boxandText: gray;
+  --letterNav: black;
+}
+
+.CommentsContainer {
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.userdatecomment {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.CommentName {
+  margin-left: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: var(--letterNav);
+}
+
+.CommentName:hover {
+  color: var(--details);
+}
+
+.dateComment {
+  margin-left: 25px;
+  font-size: 12px;
+}
+
+.CommentText {
+  margin-left: 20px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: gray;
+}

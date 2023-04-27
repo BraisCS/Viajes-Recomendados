@@ -11,7 +11,7 @@ export const MostVoted = ({ recommendation }) => {
           <p className="slide-name">{recommendation.user}</p>
         </Link>
         <p className="slide-votes">
-          {recommendation.media} ({recommendation.num_votes})
+          ★{recommendation.media} ({recommendation.num_votes})
         </p>
       </div>
 

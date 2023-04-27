@@ -83,7 +83,7 @@ export const EditUserPage = () => {
 
   return (
     <section>
-      <h1> Cambia el email o el usuario </h1>
+      <h1> Edita tu perfil </h1>
       <EditUserForm user={user} token={token} setUser={setUser} />
     </section>
   );

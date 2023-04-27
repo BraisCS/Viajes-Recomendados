@@ -26,7 +26,11 @@ export const Recommendation = ({
   const [commentOpen, setCommentOpen] = useState(false);
 
   const handleCommentIconClick = () => {
-    setCommentOpen(true);
+    if (commentOpen) {
+      setCommentOpen(false);
+    } else {
+      setCommentOpen(true);
+    }
   };
 
   const handleCommentForm = async (e) => {
@@ -92,7 +96,7 @@ export const Recommendation = ({
           </Link>
           {recommendation.media ? (
             <p>
-              {recommendation.media} ({recommendation.num_votes})
+              ★ {recommendation.media} ({recommendation.num_votes})
             </p>
           ) : null}
         </div>
@@ -116,31 +120,34 @@ export const Recommendation = ({
       <div className="rLine"></div>
       {token ? (
         <section>
-          <div className="formR">
-            <button
-              className="commentR"
-              type="button"
-              onClick={handleCommentIconClick}
-            >
-              <ChatBubbleOutlineIcon />
-            </button>
-            {commentOpen && (
-              <form onSubmit={handleCommentForm}>
-                <fieldset>
-                  <label htmlFor="comment"></label>
-                  <input
-                    type="text"
-                    id="comment"
-                    name="comment"
-                    value={comentario}
-                    onChange={(e) => setComentario(e.target.value)}
-                  />
-                </fieldset>
-                <button type="submit">Publicar</button>
-              </form>
-            )}
+          <div className="formContainer">
+            <div className="formR">
+              <button
+                className="commentR"
+                type="button"
+                onClick={handleCommentIconClick}
+              >
+                <ChatBubbleOutlineIcon />
+              </button>
+              {commentOpen && (
+                <form onSubmit={handleCommentForm}>
+                  <fieldset>
+                    <label htmlFor="comment"></label>
+                    <input
+                      className="formComment"
+                      type="text"
+                      id="comment"
+                      name="comment"
+                      value={comentario}
+                      onChange={(e) => setComentario(e.target.value)}
+                    />
+                  </fieldset>
+                  <button type="submit">Publicar</button>
+                </form>
+              )}
+            </div>
             <form className="formvote">
-              <p className="clasificacion"> Vota la recomendacion</p>
+              <p className="clasificacion"></p>
               <label for="radio5">
                 <input
                   id="radio5"
@@ -151,7 +158,7 @@ export const Recommendation = ({
                     setVote(parseInt(e.target.value));
                     handleVoteForm(e);
                   }}
-                />{" "}
+                />
                 ★
               </label>
               <label for="radio4">
@@ -164,7 +171,7 @@ export const Recommendation = ({
                     setVote(parseInt(e.target.value));
                     handleVoteForm(e);
                   }}
-                />{" "}
+                />
                 ★
               </label>
               <label for="radio3">
@@ -177,7 +184,7 @@ export const Recommendation = ({
                     setVote(parseInt(e.target.value));
                     handleVoteForm(e);
                   }}
-                />{" "}
+                />
                 ★
               </label>
               <label for="radio2">
@@ -190,7 +197,7 @@ export const Recommendation = ({
                     setVote(parseInt(e.target.value));
                     handleVoteForm(e);
                   }}
-                />{" "}
+                />
                 ★
               </label>
               <label for="radio1">
@@ -203,7 +210,7 @@ export const Recommendation = ({
                     setVote(parseInt(e.target.value));
                     handleVoteForm(e);
                   }}
-                />{" "}
+                />
                 ★
               </label>
             </form>
