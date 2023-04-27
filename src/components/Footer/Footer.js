@@ -12,7 +12,6 @@ export const Footer = () => {
       <div className="footer-content">
         <p>Copyright © 2023</p>
         <p>CheckAndTrip.com</p>
-        <p>Todos los derechos reservados</p>
         <IconButton
           onClick={handleClick}
           sx={{

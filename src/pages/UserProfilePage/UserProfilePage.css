@@ -16,24 +16,32 @@
 }
 
 .imgProfile {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   margin: 20px;
 }
 
 .userDates {
   display: flex;
   flex-direction: column;
-  margin: 15px auto 15px 20px;
+  /* margin: 15px auto 15px 20px; */
 }
 
 .nameProfile {
   font-size: 24px;
   font-family: "Poppins";
-  color: var(--letterNav);
-  margin-left: 0;
+  color: var(--details);
+  margin: 15px 0 0 0;
 }
 
 .bioProfile {
-  margin-left: 0;
+  margin: 10px 0 0 0;
+}
+
+.h1profile {
+  margin: 15px 0 0 0;
+  font-size: 24px;
+  font-family: "Inter";
+  color: var(--letterNav);
+  text-transform: uppercase;
 }

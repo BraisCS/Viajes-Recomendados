@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+:root {
+  --background: white;
+  --details: #80b192;
+  --detailsLetter: #f5f5f5;
+  --boxandText: gray;
+  --letterNav: black;
+}
+
+.rprofile {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.profileR {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+
+.profileV {
+  font-size: 12px;
+  font-family: "Poppins";
+}
+
+.profileI {
+  width: 100vw;
+  height: auto;
+}
+
+.profileT,
+.profilePlace,
+.profileS {
+  margin-left: 5px;
+  font-size: 12px;
+  font-family: Poppins;
+  color: var(--letterNav);
+  text-align: left;
+}
+
+.profileT {
+  font-size: 14px;
+}
+
+.profileT:hover {
+  color: var(--details);
+}
+
+.placeC {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profileC,
+.profileV {
+  margin-right: 5px;
+}
+
+.profileC {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 0 6px;
+  font-size: 12px;
+  color: var(--letterNav);
+}

@@ -63,11 +63,22 @@
   box-shadow: 0px 0px 3px 1px rgb(150, 145, 145);
 }
 
-.formR {
+.formContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin: 10px 15px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.formR {
+  position: relative;
+}
+
+.formR form {
+  position: absolute;
+  top: 100%;
+  left: 0;
 }
 
 .commentR {
@@ -75,12 +86,19 @@
   background: none;
 }
 
-.comments {
-  margin: 10px auto 10px 15px;
-  font-size: 20px;
-  font-family: "Inter";
-  text-transform: uppercase;
-  color: var(--letterNav);
+/* .comment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  order: 2;
+} */
+
+.inputComment {
+  display: flex;
+  width: 80vw;
+  margin: auto;
+  border: none;
+  border-bottom: 1px solid gray;
 }
 
 .formvote {
@@ -89,6 +107,7 @@
   width: 250px;
   margin: 0 auto;
   height: 50px;
+  order: 1;
 }
 .formvote p {
   text-align: center;
@@ -96,6 +115,7 @@
 .formvote label {
   font-size: 20px;
 }
+
 .formvote input[type="radio"] {
   display: none;
 }
@@ -108,4 +128,12 @@
 }
 .formvote input[type="radio"]:checked ~ label {
   color: orange;
+}
+
+.comments {
+  margin: 10px auto 10px 15px;
+  font-size: 20px;
+  font-family: "Inter";
+  text-transform: uppercase;
+  color: var(--letterNav);
 }
