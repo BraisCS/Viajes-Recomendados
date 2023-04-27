@@ -69,3 +69,26 @@
   font-size: 12px;
   color: var(--letterNav);
 }
+
+@media (min-width: 768px) {
+  .rprofile {
+    width: 60vw;
+    margin: 0 auto;
+  }
+
+  .profileR {
+    width: 60vw;
+    margin: 0 auto 70px auto;
+  }
+
+  .profileI {
+    width: 60vw;
+  }
+
+  .profileV,
+  .profileT,
+  .profilePlace,
+  .profileS {
+    font-size: 16px;
+  }
+}

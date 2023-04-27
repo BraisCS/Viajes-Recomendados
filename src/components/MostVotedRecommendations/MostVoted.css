@@ -66,14 +66,6 @@ a {
   list-style: none;
 }
 
-/* .slide-container:hover .slide-category .slide-title {
-  display: none;
-}
-
-.slide-container:hover .slide-summary {
-  display: block;
-} */
-
 @media (min-width: 475px) {
   .slide-container {
     width: 80vw;

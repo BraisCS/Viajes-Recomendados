@@ -108,19 +108,7 @@ export const NewRecommendation = ({ addRecommendation }) => {
       <fieldset className="fieldset">
         <label htmlFor="category"> Categoría </label>
         <div className="input-container">
-          <input
-            type="text"
-            id="category"
-            name="category"
-            required
-            list="category-options"
-          />
-          <datalist id="category-options">
-            <option value="ciudad" />
-            <option value="museo" />
-            <option value="ruta" />
-            <option value="otro" />
-          </datalist>
+          <input type="text" id="category" name="category" required />
         </div>
       </fieldset>
 

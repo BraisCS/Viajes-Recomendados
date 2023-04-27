@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: row;
   margin: auto;
+  width: 100vw;
 }
 
 .imgProfile {
@@ -44,4 +45,20 @@
   font-family: "Inter";
   color: var(--letterNav);
   text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .userPage {
+    width: 60vw;
+  }
+
+  .imgProfile {
+    width: 200px;
+    height: 200px;
+    margin: 25px;
+  }
+
+  .h1profile {
+    font-size: 30px;
+  }
 }
